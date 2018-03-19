@@ -26,6 +26,7 @@ myShow 'ignored', 'not showing..'
 myShow 'ignored', 'not showing..'
 myShow 'last pending call only shows', 'if 3d argument is not given'
 # showing: hello world!
+# showing: last pending call only shows if 3d argument is not given
 
 # when calls to the function are made during the delay time,
 # the last call is saved and called directly after the delay expires.

@@ -4,7 +4,7 @@ Wraps a function so it will only be called once during a set delay time.
 
 --
 
-I wrote this to limit the amount of calls to my event handler to a maximum of 1 call every 100 milliseconds.
+I wrote this to limit the amount of calls to an event handler to a maximum of 1 call every 100 milliseconds.
 
 
 **Usage**:

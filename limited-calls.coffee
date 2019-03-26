@@ -23,8 +23,7 @@
 # SOFTWARE.
 #
 
-{	forceNumber, forceBoolean
-	forceFunction	}	= require 'types.js'
+types = require 'types.js'
 
 MISSING_FUNC_TEXT= 'limit-calls: invalid or missing function, check the first argument of limit-calls invocation.'
 
@@ -37,12 +36,12 @@ class LimitedCalls
 
 
 	constructor: ( func, delay, ignorePending ) ->
-		@func						= forceFunction func, -> console.log( MISSING_FUNC_TEXT )
-		@delay					= forceNumber delay, DELAY_DEFAULT
+		@func						= types.forceFunction func, -> console.log( MISSING_FUNC_TEXT )
+		@delay					= types.forceNumber delay, DELAY_DEFAULT
 		@running					= false
 		@pendingCall			= false
 		@pendingCallArgs		= []
-		@ignorePending			= forceBoolean ignorePending
+		@ignorePending			= types.forceBoolean ignorePending
 
 
 	setPendingCall: ( args... ) ->

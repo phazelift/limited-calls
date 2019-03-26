@@ -1,9 +1,11 @@
 {
   "name": "limited-calls",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Wraps a function so it will only be called once during a set delay time.",
   "main": "limited-calls.min.js",
   "scripts": {
+    "uglify": "uglifyjs limited-calls.js -c -m -o limited-calls.min.js",
+    "build": "coffee -c --transpile limited-calls.coffee && npm run uglify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,5 +28,9 @@
   "homepage": "https://github.com/phazelift/limited-calls",
   "dependencies": {
     "types.js": "latest"
+  },
+  "devDependencies": {
+    "@babel/core": "latest",
+    "@babel/preset-env": "latest"
   }
 }

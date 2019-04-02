@@ -34,8 +34,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
   // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   // SOFTWARE.
-  var DELAY_DEFAULT, LimitedCalls, MISSING_FUNC_TEXT, _limitedCalls2, types;
-
+  var DELAY_DEFAULT, LimitedCalls, MISSING_FUNC_TEXT, types;
   types = require('types.js');
   MISSING_FUNC_TEXT = 'limit-calls: invalid or missing function, check the first argument of limit-calls invocation.'; // in milliseconds
 
@@ -100,12 +99,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   // this can be disabled by passing true for ignorePending
 
 
-  module.exports = _limitedCalls2 = function limitedCalls(func, delay, ignorePending) {
-    _limitedCalls2 = new LimitedCalls(func, delay, ignorePending);
+  module.exports = function (func, delay, ignorePending) {
+    var limitedCalls;
+    limitedCalls = new LimitedCalls(func, delay, ignorePending);
     return function () {
       var _limitedCalls;
 
-      return (_limitedCalls = _limitedCalls2).run.apply(_limitedCalls, arguments);
+      return (_limitedCalls = limitedCalls).run.apply(_limitedCalls, arguments);
     };
   };
 }).call(void 0);

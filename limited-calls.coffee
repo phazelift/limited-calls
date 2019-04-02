@@ -71,7 +71,7 @@ class LimitedCalls
 # the last call of calls made during the delay is executed after the delay ends
 # this can be disabled by passing true for ignorePending
 #
-module.exports= limitedCalls= ( func, delay, ignorePending ) ->
+module.exports= ( func, delay, ignorePending ) =>
 
-	limitedCalls= new LimitedCalls func, delay, ignorePending
-	return ( args... ) -> limitedCalls.run args...
+	limitedCalls= new LimitedCalls( func, delay, ignorePending  )
+	return ( args... ) => limitedCalls.run args...

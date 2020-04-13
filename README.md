@@ -14,7 +14,7 @@ I wrote this to limit the amount of calls to an event handler to a maximum of 1 
 
 
 ```javascript
-const limitedCalls= require('./limited-calls.min.js');
+const limitedCalls = require('limited-calls');
 
 const show = (...text) => console.log('showing:', ...text);
 
